@@ -26,5 +26,36 @@ initial_value
 
 @doc for all public apis of a module
 
+## Records
 
 Prefer `RecordName.record_value(new_value, record)` over `record.record_value(new_value)` for ease of refactoring
+
+Prefer `RecordName.new` to `RecordName[]`
+
+
+## Control Flow
+
+Prefer pattern matching over control flow (case, if, etc..) in order to encourage functional design patterns
+
+```
+#bad
+def print(value)
+  case value do
+  0 -> IO.puts "value is 0"
+  1 -> IO.puts "value is 1"
+  default -> IO.puts "value is not 0 or 1"
+end
+
+#good
+def print(0)
+  IO.puts "value is 0"
+end
+def print(1)
+  IO.puts "value is 1"
+end
+def print(other)
+  IO.puts "value is not 0 or 1"
+end
+
+
+```
