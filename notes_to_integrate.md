@@ -89,6 +89,8 @@ defmodule Character.ApiHandler.Puzzle do
 end
 
 alias Character.ApiHandler.Puzzle, as: ApiHandler.Puzzle
+
+ApiHandler.Puzzle.method_foo
 ```
 
 
