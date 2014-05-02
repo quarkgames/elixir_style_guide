@@ -1,7 +1,5 @@
 Use @ for module constants
 
-Use 120 line width
-
 align guards with the function definition
 if guard is longer than one line separate, start each new line aligned with the first clause starting with the predicate
 
@@ -91,6 +89,43 @@ end
 alias Character.ApiHandler.Puzzle, as: ApiHandler.Puzzle
 
 ApiHandler.Puzzle.method_foo
+```
+
+## Spacing
+Use 120 line width, some guidelines to do so:
+
+When arguments must be split up into multiple lines, split every argument into it's own line:
+```
+# good
+def foo(var1, 
+        var2, 
+        var3)
+end
+
+# bad
+def foo(var1, var2,
+        var3) do
+end
+
+```
+
+This can be done for pattern matched list-like structures too
+
+```
+def foo(record(record_value: record_value,
+               record_val:   record_val,
+               value:        value
+               ) = record) do
+end
+```
+Note the spacing alignment is useful when dealing with long lists.  Also, the closing paren is on it's own line to allow for assigning the record value as a whole to a variable.
+
+When dealing with anonymous functions as an argument, align the body to be 2 spaces in from the function definition.
+Align the end with the functgion definition
+```
+Enum.reduce(list, [], fn(value, acc) ->
+                        [value | acc]
+                      end)
 ```
 
 
