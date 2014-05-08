@@ -121,7 +121,7 @@ end
 Note the spacing alignment is useful when dealing with long lists.  Also, the closing paren is on it's own line to allow for assigning the record value as a whole to a variable.
 
 When dealing with anonymous functions as an argument, align the body to be 2 spaces in from the function definition.
-Align the end with the functgion definition
+Align the end with the function definition
 ```
 Enum.reduce(list, [], fn(value, acc) ->
                         [value | acc]
