@@ -135,6 +135,7 @@ Enum.reduce(list, [], fn(value, acc) ->
 end)
 ```
 
+## TypeSpecs
 
-
+Prefer using `term` over `any`
 
